@@ -30,4 +30,4 @@ Traverse a string nad only display unique characters of a user input
 * Characters displayed are in order of occurrence, not alphabetical
 
 
-#Enjoy!
+# Enjoy!
