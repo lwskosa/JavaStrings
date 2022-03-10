@@ -10,6 +10,10 @@ public class Vowels extends Sentence{
         description = "This task counts vowels in a sentence";
     }
 
+    /**
+     * Count how many Vowels the input has
+     * @return Amount of Vowels the input has
+     */
     public int getVowelCount() {
         if(hasValidInput(false)) {
             int vowelCount = 0;
@@ -28,6 +32,11 @@ public class Vowels extends Sentence{
         return -1;
     }
 
+    /**
+     * Count how many times a specific character has occurred in input
+     * @param input Character to count
+     * @return Amount of specific character occurrences
+     */
     public int getCharCount(char input) {
         if(hasValidInput(false)) {
             int vowelCount = 0;
@@ -41,6 +50,10 @@ public class Vowels extends Sentence{
         return -1;
     }
 
+    /**
+     * Print information on how many times Vowels occurred in sentence
+     * @param showDetailedInfo
+     */
     public void showResults(boolean showDetailedInfo) {
         if (hasValidInput(false)) {
             if (showDetailedInfo) {

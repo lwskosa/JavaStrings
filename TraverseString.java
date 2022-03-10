@@ -9,6 +9,9 @@ public class TraverseString extends Sentence {
         description = "This task lists unique characters in a sentence";
     }
 
+    /**
+     * Lists all unique characters in input, in the order of appearance
+     */
     public void listUniqueCharacters() {
         if(hasValidInput(false)) {
             Hashtable<Character, Integer> uniques = new Hashtable<>();

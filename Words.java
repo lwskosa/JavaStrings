@@ -7,6 +7,10 @@ public class Words extends Sentence {
         description = "This task counts the amounf of words in a sentence";
     }
 
+    /**
+     * Count and print how many words are in the input
+     * @param uniqueWords TRUE - How many unique words are in sentence<br>FALSE - Total number of words in sentence
+     */
     protected void displayWordCount(boolean uniqueWords) {
         if (hasValidInput(false)) {
             if (uniqueWords) {

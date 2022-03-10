@@ -2,13 +2,16 @@ package com.techbee.lajoskosa.javastrings;
 
 import java.util.ArrayList;
 
-enum SearchMode{
-        FIRST_WORD_ONLY,
-        SENTENCE_TO_WORDS,
-        WHOLE_SENTENCE,
-        WHOLE_SENTENCE_IGNORE_SPACE,
+/**
+ * Possible methods to check for Palindromes in input
+ */
+enum SearchMode {
+    FIRST_WORD_ONLY,
+    SENTENCE_TO_WORDS,
+    WHOLE_SENTENCE,
+    WHOLE_SENTENCE_IGNORE_SPACE
+}
 
-    }
 public class Palindrome extends Sentence {
     final int MIN_WORD_LENGTH = 3;
     public Palindrome(){
@@ -17,6 +20,10 @@ public class Palindrome extends Sentence {
         description = "This task checks if input is a Palindrome";
     }
 
+    /**
+     * Naive solution, basic functionality
+     * @param ignoreSpaces TRUE - Word separation does not matter<br>FALSE - Word separation and spacing matters
+     */
     public void checkPalindrome(boolean ignoreSpaces) {
         if (hasValidInput(false)) {
             String userWord = getInputFirstWord();
@@ -45,8 +52,11 @@ public class Palindrome extends Sentence {
         }
     }
 
-
-
+    /**
+     * Advanced version of the Palindome checker
+     * @param checkThis String to be checked for Palindromes
+     * @param mode <b>enum</b>, select which method to be used to check for Palindrome
+     */
     public void checkPalindrome(String checkThis, SearchMode mode){
             if(hasValidInput(false)){
             String sentence = checkThis.toLowerCase();
@@ -78,6 +88,11 @@ public class Palindrome extends Sentence {
         }
     }
 
+    /**
+     * Steps through the input to see if it is a Palindrome
+     * @param wordToCheck <b>String</b> to check for Palindromes
+     * @return TRUE - input is a Palindrome<br>FALSE - input is not a Palindrome
+     */
     private boolean isPalindrome(String wordToCheck) {
         int counter = wordToCheck.length() - 1;
         for (int i = 0; i < wordToCheck.length(); i++) {
@@ -88,6 +103,11 @@ public class Palindrome extends Sentence {
         return true;
     }
 
+    /**
+     * Print results for the Palindrome check
+     * @param input
+     * @param isPalindrome
+     */
     private void printResults(String input, boolean isPalindrome) {
         if (input.length() >= MIN_WORD_LENGTH) {
             if (isPalindrome) {
@@ -99,6 +119,13 @@ public class Palindrome extends Sentence {
             System.out.printf("\tThe word '%s' is too short - must be more than %d characters\n", input, MIN_WORD_LENGTH);
         }
     }
+
+    /**
+     * Provide formatted restults for the Palindrome check
+     * @param input Provide <b>String</b> to check for Palindromes
+     * @param isPalindrome Results for Palindrome check.<br>TRUE - input is a Palindrome<br>FALSE - input is not a Palindrome
+     * @param padding Total characters for padding<br><i>Needs to be more than input length</i>
+     */
     private void printResults(String input, boolean isPalindrome, int padding) {
         if (input.length() >= MIN_WORD_LENGTH) {
             if (isPalindrome) {
@@ -112,8 +139,12 @@ public class Palindrome extends Sentence {
         }
     }
 
+    /**
+     * Check if input is a "true" Palindrome.<br>True Palindromes match even if word separation/spaces are not ignored
+     * @param isPalindrome Results for Palindrome check.<br>TRUE - input is a Palindrome<br>FALSE - input is not a Palindrome
+     * @param includeSpaces TRUE - Word separation matters<br>FALSE - Word separation/spacing does not matter
+     */
     private void printResults(boolean isPalindrome, boolean includeSpaces) {
-        //TODO: Minimum length for words to be checked? Should "a" or "I" count?
         if (isPalindrome && includeSpaces) {
             System.out.println("Your sentence is an absolute Palindrome");
         } else if (isPalindrome && !includeSpaces) {
@@ -125,6 +156,5 @@ public class Palindrome extends Sentence {
         else if(!isPalindrome && !includeSpaces) {
             System.out.println("Your sentence is NOT a Palindrome");
         }
-
     }
 }

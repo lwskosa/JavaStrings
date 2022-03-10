@@ -103,8 +103,8 @@ public class Sentence {
 
     /**
      * Check if user has provided valid input which affects loop and makes sure code is not getting executed with invalid data
-     * @param provideFeedback Provide feedback to user
-     * @return TRUE - user has provided valid input\nFALSE - user has not proided valid input
+     * @param provideFeedback TRUE - Provide feedback to user if no valid input was entered<br>FALSE - Do not provide feedback
+     * @return TRUE - user has provided valid input<br>FALSE - user has not proided valid input
      */
     public boolean hasValidInput(boolean provideFeedback) {
         if(getUserSentence().equals("")){
